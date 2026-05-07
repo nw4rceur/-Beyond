@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c170bbff-e8de-401a-9af8-f9d582eb6ccd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/public/Devis-gratuit.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Devis-gratuit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Devis-gratuit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/beyond1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/beyond2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/beyond3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/craph1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/craph2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/craph3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo_light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo_team.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mentions-legales.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/mentions-legales.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/politique-de-confidentialite.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/politique-de-confidentialite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/portfolio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Devis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Devis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/portfolio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/portfolio.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/admin/Documents/Projet perso web/beyond-netero",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Documents/Projet perso web/GitHub&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Projet perso web\beyond-netero\public\illustrations" />
@@ -68,6 +94,13 @@
       <workItem from="1761788861595" duration="2762000" />
       <workItem from="1761791657322" duration="2812000" />
       <workItem from="1762706054301" duration="13304000" />
+      <workItem from="1772702920382" duration="3836000" />
+      <workItem from="1773848779753" duration="871000" />
+      <workItem from="1774256875090" duration="2549000" />
+      <workItem from="1775440026632" duration="12132000" />
+      <workItem from="1776377119310" duration="2178000" />
+      <workItem from="1777173604456" duration="4655000" />
+      <workItem from="1778170805209" duration="1945000" />
     </task>
     <servers />
   </component>

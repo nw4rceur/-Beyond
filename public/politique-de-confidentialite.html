@@ -2,169 +2,448 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Politique de Confidentialité - Beyond</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Politique de confidentialité — Beyond 31</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;1,300&display=swap" />
     <style>
+        /* ── Reset ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ── Palette ── */
+        :root {
+            --void:     #06090F;
+            --deep:     #0B1220;
+            --surface:  #0F1828;
+            --gold:     #C9AA52;
+            --gold-dim: rgba(201,170,82,.09);
+            --gold-brd: rgba(201,170,82,.18);
+            --star:     #E8EDF5;
+            --prose:    #8A96AB;
+            --muted:    #4A5568;
+            --line:     rgba(255,255,255,.05);
+        }
+
+        /* ── Base ── */
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f4f7fb;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            background: var(--void);
+            color: var(--prose);
+            line-height: 1.7;
+            min-height: 100vh;
         }
+
+        /* ── Scrollbar ── */
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-track { background: var(--void); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-brd); border-radius: 2px; }
+
+        /* ── Étoiles CSS ── */
+        .stars {
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .stars::before, .stars::after {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                    radial-gradient(1px 1px at 8%  15%, rgba(255,255,255,.5)  0%, transparent 100%),
+                    radial-gradient(1px 1px at 22% 68%, rgba(255,255,255,.35) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 40% 30%, rgba(255,255,255,.55) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 56% 82%, rgba(255,255,255,.3)  0%, transparent 100%),
+                    radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,.45) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 84% 55%, rgba(255,255,255,.4)  0%, transparent 100%),
+                    radial-gradient(1px 1px at 94% 8%,  rgba(255,255,255,.3)  0%, transparent 100%),
+                    radial-gradient(1px 1px at 3%  50%, rgba(255,255,255,.45) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 33% 90%, rgba(255,255,255,.25) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 62% 44%, rgba(255,255,255,.4)  0%, transparent 100%),
+                    radial-gradient(1px 1px at 78% 75%, rgba(255,255,255,.35) 0%, transparent 100%),
+                    radial-gradient(1.5px 1.5px at 18% 4%,  rgba(201,170,82,.4)  0%, transparent 100%),
+                    radial-gradient(1.5px 1.5px at 74% 36%, rgba(201,170,82,.28) 0%, transparent 100%);
+        }
+        .stars::after {
+            background-image:
+                    radial-gradient(1px 1px at 12% 35%, rgba(255,255,255,.3)  0%, transparent 100%),
+                    radial-gradient(1px 1px at 28% 60%, rgba(255,255,255,.42) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 46% 12%, rgba(255,255,255,.35) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 65% 78%, rgba(255,255,255,.48) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.38) 0%, transparent 100%),
+                    radial-gradient(1px 1px at 50% 95%, rgba(255,255,255,.25) 0%, transparent 100%);
+            opacity: .55;
+        }
+
+        /* ── Orbe décoratif ── */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none; z-index: 0;
+            filter: blur(130px);
+        }
+
+        /* ── Header ── */
         header {
-            background-color: grey;
-            padding: 20px 40px;
-            color: #fff;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(6,9,15,.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--line);
         }
-        header img {
-            height: 60px;
+        .header-inner {
+            max-width: 1100px; margin: 0 auto;
+            padding: .9rem 2.5rem;
+            display: flex; align-items: center; justify-content: space-between;
         }
-        header a {
-            color: #fff;
-            font-size: 1.2rem;
+        header img { height: 44px; display: block; }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        .nav-link {
+            font-family: 'Outfit', sans-serif; font-size: .74rem; font-weight: 400;
+            letter-spacing: .1em; text-transform: uppercase;
+            color: var(--prose); text-decoration: none;
+            transition: color .18s;
+        }
+        .nav-link:hover { color: var(--star); }
+        .btn-nav {
+            font-family: 'Outfit', sans-serif; font-size: .74rem; font-weight: 500;
+            letter-spacing: .09em; text-transform: uppercase;
+            padding: .56rem 1.3rem;
+            background: var(--gold); color: var(--void);
+            border: none; border-radius: 40px; cursor: pointer;
             text-decoration: none;
-            font-weight: 600;
+            transition: background .18s, transform .18s;
         }
-        main {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            background-color: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
+        .btn-nav:hover { background: #B89A42; transform: translateY(-1px); }
+
+        /* ── Layout principal ── */
+        .page-wrapper {
+            position: relative; z-index: 2;
+            max-width: 820px; margin: 0 auto;
+            padding: 5rem 2.5rem 8rem;
         }
-        h1 {
-            font-size: 2.6rem;
-            color: #0f766e;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-bottom: 40px;
+
+        /* ── Hero de la page ── */
+        .page-hero { margin-bottom: 4rem; }
+        .page-label {
+            font-family: 'Outfit', sans-serif; font-size: .62rem; font-weight: 400;
+            letter-spacing: .22em; text-transform: uppercase;
+            color: var(--gold); opacity: .75; margin-bottom: .6rem;
         }
-        h2 {
-            font-size: 1.6rem;
-            color: #333;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 600;
+        .page-title {
+            font-family: 'Outfit', sans-serif; font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.08; letter-spacing: -.025em;
+            color: var(--star); margin-bottom: .9rem;
         }
-        p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+        .page-title span { color: var(--gold); }
+        .page-intro {
+            font-family: 'Inter', sans-serif; font-weight: 300;
+            font-size: .92rem; color: var(--prose); line-height: 1.85;
+            max-width: 540px;
         }
-        a {
-            color: #0f766e;
-            text-decoration: none;
-            font-weight: 500;
+
+        /* ── Sections de contenu ── */
+        .content-block {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.2rem;
+            transition: border-color .22s;
         }
-        a:hover {
-            text-decoration: underline;
+        .content-block:hover { border-color: var(--gold-brd); }
+
+        /* Numéro de section */
+        .block-header {
+            display: flex; align-items: flex-start; gap: 1rem;
+            margin-bottom: 1rem;
         }
-        .footer {
+        .block-num {
+            font-family: 'Outfit', sans-serif; font-weight: 700;
+            font-size: .65rem; letter-spacing: .14em;
+            color: var(--gold); opacity: .6;
+            padding: .22rem .6rem; border-radius: 20px;
+            background: var(--gold-dim); border: 1px solid var(--gold-brd);
+            flex-shrink: 0; margin-top: .18rem;
+        }
+        .block-title {
+            font-family: 'Outfit', sans-serif; font-weight: 600;
+            font-size: 1.05rem; color: var(--star); line-height: 1.3;
+        }
+
+        /* Texte courant */
+        .block-body {
+            font-family: 'Inter', sans-serif; font-weight: 300;
+            font-size: .9rem; color: var(--prose); line-height: 1.88;
+        }
+        .block-body + .block-body { margin-top: .9rem; }
+
+        /* Liste */
+        .b31-list {
+            list-style: none; padding: 0;
+            margin: .85rem 0 0;
+            display: flex; flex-direction: column; gap: .5rem;
+        }
+        .b31-list li {
+            display: flex; align-items: baseline; gap: .7rem;
+            font-family: 'Inter', sans-serif; font-weight: 300;
+            font-size: .9rem; color: var(--prose); line-height: 1.7;
+        }
+        .b31-list li::before {
+            content: '·';
+            color: var(--gold); opacity: .6; font-size: 1.1rem; flex-shrink: 0;
+        }
+
+        /* Lien dans le contenu */
+        .b31-link {
+            color: var(--gold); text-decoration: none;
+            border-bottom: 1px solid var(--gold-brd);
+            transition: border-color .18s, color .18s;
+        }
+        .b31-link:hover { color: var(--star); border-color: var(--star); }
+
+        /* Bloc mise à jour */
+        .update-note {
+            margin-top: 2.5rem;
+            padding: 1rem 1.2rem;
+            background: var(--gold-dim); border: 1px solid var(--gold-brd);
+            border-radius: 10px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .update-note p {
+            font-family: 'Inter', sans-serif; font-weight: 300; font-style: italic;
+            font-size: .82rem; color: var(--prose);
+        }
+        .update-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: var(--gold); flex-shrink: 0; opacity: .7;
+        }
+
+        /* ── Footer ── */
+        footer {
+            position: relative; z-index: 2;
+            border-top: 1px solid var(--line);
+            padding: 2rem 2.5rem;
             text-align: center;
-            font-size: 0.9rem;
-            color: #999;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #eaeaea;
         }
-        .footer a {
-            color: #0f766e;
+        footer p {
+            font-family: 'Outfit', sans-serif; font-size: .68rem;
+            color: var(--muted); letter-spacing: .05em;
+        }
+        footer a {
+            color: var(--prose); text-decoration: none;
+            transition: color .18s;
+        }
+        footer a:hover { color: var(--gold); }
+
+        /* ── Table des matières latérale (desktop) ── */
+        @media (min-width: 1100px) {
+            .outer {
+                display: grid;
+                grid-template-columns: 1fr 200px;
+                gap: 3rem;
+                max-width: 1060px;
+                margin: 0 auto;
+                padding: 5rem 2.5rem 8rem;
+                position: relative; z-index: 2;
+            }
+            .page-wrapper { padding: 0; max-width: none; margin: 0; }
+            .toc {
+                position: sticky; top: 5rem; align-self: start;
+                display: flex; flex-direction: column; gap: .6rem;
+            }
+            .toc-label {
+                font-family: 'Outfit', sans-serif; font-size: .6rem; font-weight: 500;
+                letter-spacing: .18em; text-transform: uppercase;
+                color: var(--gold); opacity: .6; margin-bottom: .4rem;
+            }
+            .toc a {
+                font-family: 'Outfit', sans-serif; font-size: .72rem; font-weight: 400;
+                color: var(--muted); text-decoration: none; line-height: 1.5;
+                transition: color .18s;
+            }
+            .toc a:hover { color: var(--prose); }
+        }
+        @media (max-width: 1099px) {
+            .outer { padding: 4rem 1.5rem 6rem; }
+            .toc { display: none; }
         }
     </style>
 </head>
 <body>
 
+<!-- Ambiance spatiale -->
+<div class="stars"></div>
+<div class="orb" style="left:60%;top:-10%;width:500px;height:500px;background:rgba(37,55,130,.1);"></div>
+<div class="orb" style="left:-8%;top:40%;width:380px;height:380px;background:rgba(201,170,82,.05);"></div>
+
+<!-- Header -->
 <header>
-    <a href="/">
-        <img src="/logo_dark.png" alt="Logo Beyond" />
-    </a>
+    <div class="header-inner">
+        <a href="/"><img src="/images/beyond31_logo.png" alt="Beyond 31" /></a>
+        <nav>
+            <a href="/#services"     class="nav-link">Services</a>
+            <a href="/#realisations" class="nav-link">Réalisations</a>
+            <a href="/contact"  class="nav-link">Contact</a>
+            <a href="/devis" class="btn-nav">Devis gratuit</a>
+        </nav>
+    </div>
 </header>
 
-<main>
-    <h1>Politique de Confidentialité</h1>
+<!-- Corps -->
+<div class="outer">
 
-    <section>
-        <h2>Données collectées</h2>
-        <p>Nous collectons uniquement les données strictement nécessaires à l’utilisation de nos services. Cela inclut les informations suivantes :</p>
-        <ul>
-            <li>Nom, prénom</li>
-            <li>Adresse email</li>
-            <li>Numéro de téléphone</li>
-            <li>Informations de navigation (cookies, adresse IP, etc.)</li>
-        </ul>
-        <p>Nous nous engageons à ne collecter que les données nécessaires et à les traiter de manière transparente.</p>
-    </section>
+    <!-- Contenu principal -->
+    <div class="page-wrapper">
 
-    <section>
-        <h2>Utilisation des données</h2>
-        <p>Les données collectées sont utilisées exclusivement pour les raisons suivantes :</p>
-        <ul>
-            <li>Traitement des demandes de contact et de service</li>
-            <li>Amélioration de notre site et de nos services</li>
-            <li>Communication avec nos utilisateurs (actualités, mises à jour, etc.)</li>
-        </ul>
-        <p>Les données ne seront pas utilisées à des fins commerciales sans votre consentement préalable.</p>
-    </section>
+        <!-- Hero -->
+        <div class="page-hero">
+            <p class="page-label">Transparence</p>
+            <h1 class="page-title">Politique de<br /><span>confidentialité</span></h1>
+            <p class="page-intro">
+                Nous respectons votre vie privée. Cette page vous explique, simplement et sans jargon, quelles données nous collectons, pourquoi, et comment vous gardez le contrôle.
+            </p>
+        </div>
 
-    <section>
-        <h2>Stockage & sécurité</h2>
-        <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données personnelles contre toute perte, utilisation abusive ou accès non autorisé.</p>
-        <p>Les données sont stockées sur des serveurs sécurisés. Nous nous assurons que nos prestataires respectent des normes strictes de sécurité.</p>
-    </section>
+        <!-- Section 01 -->
+        <div class="content-block" id="s1">
+            <div class="block-header">
+                <span class="block-num">01</span>
+                <h2 class="block-title">Données collectées</h2>
+            </div>
+            <p class="block-body">
+                Nous ne collectons que ce qui est strictement utile pour vous accompagner dans votre projet. Aucune donnée superflue, aucun profilage commercial.
+            </p>
+            <ul class="b31-list">
+                <li>Nom et prénom</li>
+                <li>Adresse email</li>
+                <li>Numéro de téléphone (facultatif)</li>
+                <li>Données de navigation (cookies techniques, adresse IP)</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>Partage des données</h2>
-        <p>Nous ne partageons vos données personnelles avec aucun tiers, sauf dans les cas suivants :</p>
-        <ul>
-            <li>Si cela est nécessaire pour l'exécution des services que vous avez demandés</li>
-            <li>Si la loi nous y oblige</li>
-        </ul>
-        <p>Dans tous les cas, nous nous assurons que vos données restent protégées et utilisées de manière conforme à la législation.</p>
-    </section>
+        <!-- Section 02 -->
+        <div class="content-block" id="s2">
+            <div class="block-header">
+                <span class="block-num">02</span>
+                <h2 class="block-title">Utilisation des données</h2>
+            </div>
+            <p class="block-body">
+                Vos informations nous servent exclusivement à vous répondre, à améliorer notre service, et à vous informer si vous nous y avez autorisés.
+            </p>
+            <ul class="b31-list">
+                <li>Traitement de vos demandes de contact et de devis</li>
+                <li>Amélioration continue de notre site et de nos services</li>
+                <li>Communication relative à vos projets en cours</li>
+            </ul>
+            <p class="block-body" style="margin-top:.9rem;">
+                Vos données ne seront jamais vendues ni utilisées à des fins publicitaires sans votre consentement explicite.
+            </p>
+        </div>
 
-    <section>
-        <h2>Vos droits</h2>
-        <p>Conformément à la législation sur la protection des données personnelles (notamment le RGPD), vous disposez des droits suivants :</p>
-        <ul>
-            <li>Le droit d'accès à vos données personnelles</li>
-            <li>Le droit de rectification de vos données</li>
-            <li>Le droit de suppression de vos données</li>
-            <li>Le droit de retirer votre consentement à tout moment</li>
-            <li>Le droit à la portabilité de vos données</li>
-        </ul>
-        <p>Pour exercer ces droits, vous pouvez nous contacter par email à <a href="mailto:contact@beyond.fr">contact@beyond.fr</a>.</p>
-    </section>
+        <!-- Section 03 -->
+        <div class="content-block" id="s3">
+            <div class="block-header">
+                <span class="block-num">03</span>
+                <h2 class="block-title">Stockage & sécurité</h2>
+            </div>
+            <p class="block-body">
+                Vos données sont hébergées sur des serveurs sécurisés. Nous appliquons des mesures techniques et organisationnelles adaptées pour prévenir tout accès non autorisé, perte ou altération.
+            </p>
+            <p class="block-body">
+                Nos prestataires sont soumis à des obligations contractuelles de confidentialité strictes.
+            </p>
+        </div>
 
-    <section>
-        <h2>Cookies</h2>
-        <p>Le site www.beyond.fr utilise des cookies pour améliorer votre expérience de navigation. Les cookies sont de petits fichiers stockés sur votre appareil qui nous permettent de :</p>
-        <ul>
-            <li>Analyser les données de trafic</li>
-            <li>Améliorer la fonctionnalité du site</li>
-            <li>Personnaliser votre expérience</li>
-        </ul>
-        <p>Vous pouvez gérer les préférences de cookies via votre navigateur. En continuant à utiliser le site, vous consentez à l'utilisation des cookies.</p>
-    </section>
+        <!-- Section 04 -->
+        <div class="content-block" id="s4">
+            <div class="block-header">
+                <span class="block-num">04</span>
+                <h2 class="block-title">Partage des données</h2>
+            </div>
+            <p class="block-body">
+                Nous ne partageons vos données avec aucun tiers à des fins commerciales. Les seules exceptions sont :
+            </p>
+            <ul class="b31-list">
+                <li>L'exécution technique des services que vous avez sollicités (hébergement, envoi d'emails)</li>
+                <li>Une obligation légale nous imposant de les communiquer</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>Modifications de la politique</h2>
-        <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les modifications seront publiées sur cette page et entreront en vigueur immédiatement après leur publication.</p>
-        <p>Nous vous encourageons à consulter cette page régulièrement pour rester informé des éventuelles mises à jour.</p>
-    </section>
+        <!-- Section 05 -->
+        <div class="content-block" id="s5">
+            <div class="block-header">
+                <span class="block-num">05</span>
+                <h2 class="block-title">Vos droits</h2>
+            </div>
+            <p class="block-body">
+                Conformément au RGPD, vous disposez à tout moment des droits suivants :
+            </p>
+            <ul class="b31-list">
+                <li>Accès à vos données personnelles</li>
+                <li>Rectification en cas d'inexactitude</li>
+                <li>Suppression de vos données</li>
+                <li>Retrait de votre consentement</li>
+                <li>Portabilité de vos données</li>
+            </ul>
+            <p class="block-body" style="margin-top:.9rem;">
+                Pour exercer ces droits, écrivez-nous à <a href="mailto:contact@beyond31.fr" class="b31-link">contact@beyond31.fr</a>. Nous traiterons votre demande dans les meilleurs délais.
+            </p>
+        </div>
 
-    <section>
-        <h2>Dernière mise à jour</h2>
-        <p>Cette politique de confidentialité a été mise à jour pour la dernière fois en avril 2025.</p>
-    </section>
-</main>
+        <!-- Section 06 -->
+        <div class="content-block" id="s6">
+            <div class="block-header">
+                <span class="block-num">06</span>
+                <h2 class="block-title">Cookies</h2>
+            </div>
+            <p class="block-body">
+                Le site beyond31.fr utilise des cookies techniques nécessaires à son bon fonctionnement. Ils nous permettent de :
+            </p>
+            <ul class="b31-list">
+                <li>Analyser les données de trafic de façon anonymisée</li>
+                <li>Mémoriser vos préférences de navigation</li>
+                <li>Améliorer la performance du site</li>
+            </ul>
+            <p class="block-body" style="margin-top:.9rem;">
+                Vous pouvez configurer ou désactiver les cookies dans les réglages de votre navigateur. Cela n'affectera pas l'accès au contenu du site.
+            </p>
+        </div>
 
-<div class="footer">
-    <p>© 2025 Beyond. Tous droits réservés.</p></div>
+        <!-- Section 07 -->
+        <div class="content-block" id="s7">
+            <div class="block-header">
+                <span class="block-num">07</span>
+                <h2 class="block-title">Modifications de la politique</h2>
+            </div>
+            <p class="block-body">
+                Cette politique peut évoluer. En cas de modification significative, nous vous en informerons par email si vous êtes en contact avec nous. La version en vigueur est toujours accessible sur cette page.
+            </p>
+        </div>
+
+        <!-- Mise à jour -->
+        <div class="update-note">
+            <div class="update-dot"></div>
+            <p>Dernière mise à jour : avril 2026. Pour toute question, <a href="mailto:contact@beyond31.fr" class="b31-link">contactez-nous</a>.</p>
+        </div>
+    </div>
+
+    <!-- Table des matières (desktop) -->
+    <aside class="toc">
+        <p class="toc-label">Sur cette page</p>
+        <a href="#s1">Données collectées</a>
+        <a href="#s2">Utilisation</a>
+        <a href="#s3">Stockage & sécurité</a>
+        <a href="#s4">Partage</a>
+        <a href="#s5">Vos droits</a>
+        <a href="#s6">Cookies</a>
+        <a href="#s7">Modifications</a>
+    </aside>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Beyond 31. Tous droits réservés. —
+        <a href="/mentions-legales.html">Mentions légales</a> ·
+    </p>
+</footer>
 
 </body>
 </html>
