@@ -766,7 +766,7 @@ export default function Home() {
                             <p style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '.9rem', color: C.prose, maxWidth: 380, margin: '0 auto 2.5rem', lineHeight: 1.88 }}>
                                 Un premier échange suffit pour savoir si on peut faire quelque chose de grand ensemble. C'est gratuit, sans engagement.
                             </p>
-                            <a href="/#Devis" className="btn-p" style={{ fontSize: '.84rem', padding: '.95rem 2.6rem' }}>
+                            <a href="/Devis" className="btn-p" style={{ fontSize: '.84rem', padding: '.95rem 2.6rem' }}>
                                 Demander un devis
                             </a>
                         </motion.div>
