@@ -550,7 +550,7 @@ export default function Home() {
                         {[['#accueil', 'Accueil'], ['#services', 'Services'], ['#realisations', 'Réalisations'], ['/contact', 'Contact']].map(([href, label]) => (
                             <a key={href} href={href} className="nav-l">{label}</a>
                         ))}
-                        <a href="#contact" className="btn-p" style={{ marginLeft: '.25rem', padding: '.58rem 1.4rem', fontSize: '.74rem' }}>Devis gratuit</a>
+                        <a href="/contact" className="btn-p" style={{ marginLeft: '.25rem', padding: '.58rem 1.4rem', fontSize: '.74rem' }}>Devis gratuit</a>
                     </nav>
 
                     {/* Hamburger texte pur */}
@@ -581,7 +581,7 @@ export default function Home() {
                                 ))}
                                 {/* CTA dans le menu mobile */}
                                 <div style={{ marginTop: '.75rem', paddingTop: '.75rem', borderTop: `1px solid ${C.line}` }}>
-                                    <a href="#contact" className="btn-p" style={{ width: '100%', justifyContent: 'center', fontSize: '.82rem' }} onClick={() => setMenuOpen(false)}>
+                                    <a href="/contact" className="btn-p" style={{ width: '100%', justifyContent: 'center', fontSize: '.82rem' }} onClick={() => setMenuOpen(false)}>
                                         Demander un devis gratuit
                                     </a>
                                 </div>

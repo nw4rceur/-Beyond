@@ -235,7 +235,7 @@ export default function Contact() {
                     <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                         <a href="/#services"     className="nav-l">Services</a>
                         <a href="/#realisations" className="nav-l">Réalisations</a>
-                        <a href="/Devis-gratuit.html" className="btn-p" style={{ padding: '.56rem 1.3rem', fontSize: '.74rem' }}>Devis gratuit</a>
+                        <a href="/Devis" className="btn-p" style={{ padding: '.56rem 1.3rem', fontSize: '.74rem' }}>Devis gratuit</a>
                     </nav>
                 </div>
             </header>
