@@ -581,7 +581,7 @@ export default function Home() {
                                 ))}
                                 {/* CTA dans le menu mobile */}
                                 <div style={{ marginTop: '.75rem', paddingTop: '.75rem', borderTop: `1px solid ${C.line}` }}>
-                                    <a href="#contact" className="btn-p" style={{ width: '100%', justifyContent: 'center', fontSize: '.82rem' }} onClick={() => setMenuOpen(false)}>
+                                    <a href="/contact" className="btn-p" style={{ width: '100%', justifyContent: 'center', fontSize: '.82rem' }} onClick={() => setMenuOpen(false)}>
                                         Demander un devis gratuit
                                     </a>
                                 </div>
