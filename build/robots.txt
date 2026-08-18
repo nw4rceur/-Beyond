@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://beyond31.online/sitemap.xml
