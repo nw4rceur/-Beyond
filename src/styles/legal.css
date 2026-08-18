@@ -1,0 +1,23 @@
+/* Mentions légales et confidentialité. */
+
+.legal-page {
+  max-width:900px;
+  padding:9rem 5vw;
+  margin:auto;
+}
+
+.legal-page h1 {
+  font-size:3rem;
+  font-weight:550;
+}
+
+.legal-page h2 {
+  font-size:1.3rem;
+  font-weight:550;
+  margin-top:2.3rem;
+}
+
+.legal-page p {
+  color:var(--muted);
+  line-height:1.75;
+}

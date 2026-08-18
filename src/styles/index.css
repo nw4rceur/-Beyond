@@ -1,0 +1,15 @@
+/*
+ * Point d’entrée des styles.
+ * Chaque fichier a un rôle précis : c’est plus simple à retrouver et à modifier.
+ */
+@import './globals.css';
+@import './layout.css';
+@import './components.css';
+@import './home.css';
+@import './projects.css';
+@import './expertise.css';
+@import './studio.css';
+@import './contact.css';
+@import './legal.css';
+@import './misc.css';
+@import './responsive.css';

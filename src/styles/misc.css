@@ -1,0 +1,30 @@
+/* Pages très simples qui ne justifient pas leur propre gros fichier. */
+
+.not-found {
+  min-height:calc(100vh - 88px);
+  padding:10rem 8vw 8rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.not-found h1 {
+  margin:1.2rem 0 1.4rem;
+  max-width:850px;
+  font-size:clamp(2.8rem,5vw,5.2rem);
+  line-height:1;
+  font-weight:550;
+}
+
+.not-found h1 em {
+  color:var(--yellow);
+  font-style:italic;
+}
+
+.not-found>p:not(.eyebrow) {
+  max-width:620px;
+  color:var(--muted);
+  line-height:1.75;
+  margin-bottom:1.8rem;
+}

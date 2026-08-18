@@ -1,0 +1,114 @@
+/* Page compétences et bloc SEO. */
+
+.expertise-list {
+  padding:2.5rem 5vw 7rem;
+}
+
+.expertise-row {
+  display:grid;
+  grid-template-columns:55px minmax(260px,.85fr) 1.15fr;
+  gap:2rem;
+  padding:1.8rem 0;
+  border-bottom:1px solid var(--line);
+  align-items:start;
+}
+
+.expertise-copy h2 {
+  font-size:1.55rem;
+  font-weight:550;
+  margin:.35rem 0 .55rem;
+}
+
+.expertise-copy p {
+  color:var(--muted);
+  line-height:1.65;
+  margin:0;
+}
+
+.tool-cloud {
+  align-self:center;
+}
+
+.seo-panel {
+  padding:0 5vw 8rem;
+}
+
+.seo-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.7rem;
+}
+
+.seo-card {
+  padding:1.15rem;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(19,29,46,.42);
+  backdrop-filter:blur(20px);
+}
+
+.seo-card svg {
+  color:var(--yellow);
+  margin-bottom:2rem;
+}
+
+.seo-card h3 {
+  font-size:1rem;
+  font-weight:550;
+  margin-bottom:.5rem;
+}
+
+.seo-card p {
+  font-size:.8rem;
+  line-height:1.6;
+  color:var(--muted);
+  margin:0;
+}
+
+.expertise-group {
+  margin-bottom:3.5rem;
+}
+
+.expertise-group:last-child {
+  margin-bottom:0;
+}
+
+.expertise-group-head {
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:2rem;
+  padding:0 0 1.1rem 55px;
+  border-bottom:1px solid var(--line2);
+}
+
+.expertise-group-head>span {
+  color:var(--yellow);
+  font:600 .72rem var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.expertise-group-head p {
+  color:#7f8b9a;
+  font-size:.78rem;
+  margin:0;
+}
+
+.expertise-row,
+.seo-card {
+  transition:background .3s ease, border-color .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+}
+
+.expertise-row:hover {
+  background:rgba(255,255,255,.018);
+}
+
+.expertise-row:hover .expertise-icon,
+.seo-card:hover > svg {
+  transform:translateY(-2px) rotate(-2deg);
+}
+
+.expertise-icon,
+.seo-card > svg {
+  transition:transform .3s cubic-bezier(.22,1,.36,1);
+}

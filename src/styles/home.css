@@ -1,0 +1,428 @@
+/* Styles propres à la page d’accueil. */
+
+.home-hero {
+  min-height:calc(100vh - 88px);
+  padding:7vh 5vw 9vh;
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
+  gap:5vw;
+  align-items:center;
+}
+
+.hero-copy {
+  max-width:760px;
+}
+
+.hero-copy h1 {
+  font-size:clamp(3rem,5.2vw,5.9rem);
+  line-height:.98;
+  font-weight:550;
+  margin:1.45rem 0 1.55rem;
+}
+
+.hero-copy h1 em,.page-hero h1 em,.contact-page h1 em {
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:500;
+  color:var(--yellow);
+  letter-spacing:-.045em;
+}
+
+.hero-lead {
+  max-width:650px;
+  color:#aab5c2;
+  font-size:1.05rem;
+  line-height:1.75;
+}
+
+.hero-actions {
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  margin-top:2rem;
+  flex-wrap:wrap;
+}
+
+.hero-facts {
+  display:flex;
+  gap:1.2rem;
+  flex-wrap:wrap;
+  margin-top:2.1rem;
+  color:#7f8c9d;
+  font-size:.68rem;
+}
+
+.hero-facts span {
+  display:flex;
+  align-items:center;
+  gap:.38rem;
+}
+
+.hero-facts svg {
+  color:#aeb9c5;
+}
+
+.hero-image {
+  height:min(67vh,660px);
+  min-height:470px;
+  border-radius:30px;
+  position:relative;
+  overflow:hidden;
+  padding:1rem;
+}
+
+
+
+.media-chip {
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  display:flex;
+  align-items:center;
+  gap:.52rem;
+  padding:.65rem .78rem;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(7,13,23,.48);
+  backdrop-filter:blur(18px);
+  font:500 .63rem var(--mono);
+  color:#d2d8e0;
+}
+
+.media-caption {
+  position:absolute;
+  left:1rem;
+  right:1rem;
+  bottom:1rem;
+  padding:1rem 1.1rem;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(7,13,23,.5);
+  backdrop-filter:blur(22px);
+  display:flex;
+  justify-content:space-between;
+  gap:2rem;
+  align-items:end;
+}
+
+.media-caption strong {
+  font:500 1rem/1.25 var(--display);
+  max-width:330px;
+}
+
+.media-caption span {
+  font-size:.72rem;
+  color:#aeb8c4;
+  max-width:300px;
+  line-height:1.55;
+}
+
+.section {
+  padding:7rem 5vw;
+}
+
+.section-head {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4vw;
+  align-items:end;
+  margin-bottom:2.8rem;
+}
+
+.section-head h2 {
+  font-size:clamp(2rem,3.2vw,3.6rem);
+  font-weight:550;
+  line-height:1.05;
+  margin:1rem 0 0;
+  max-width:680px;
+}
+
+.section-head>p {
+  max-width:520px;
+  color:var(--muted);
+  line-height:1.7;
+  margin:0;
+}
+
+.project-stack {
+  display:grid;
+  gap:4.5rem;
+}
+
+.project-feature {
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(280px,.5fr);
+  gap:2.5vw;
+  align-items:center;
+}
+
+.project-media,.gallery-media,.project-detail-visual {
+  background-size:cover;
+  background-position:center;
+  background-color:#0b1422;
+  position:relative;
+  overflow:hidden;
+}
+
+.project-media {
+  height:min(54vw,640px);
+  min-height:430px;
+  border-radius:28px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+
+
+.project-media--craph {
+  background-position:center;
+}
+
+.project-topline {
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  right:1rem;
+  display:flex;
+  justify-content:space-between;
+  color:#d5dce5;
+  font:500 .62rem var(--mono);
+  text-transform:uppercase;
+}
+
+.project-glass {
+  position:absolute;
+  left:1rem;
+  right:1rem;
+  bottom:1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.05rem;
+  border-radius:17px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(7,13,23,.5);
+  backdrop-filter:blur(22px);
+}
+
+.project-glass small {
+  display:block;
+  color:#98a5b4;
+  font-size:.62rem;
+  margin-bottom:.18rem;
+}
+
+.project-glass strong {
+  font:550 1.1rem var(--display);
+}
+
+.project-glass svg {
+  color:var(--yellow);
+}
+
+.project-copy h3 {
+  font-size:clamp(2rem,3.6vw,3.8rem);
+  font-weight:550;
+  margin-bottom:.6rem;
+}
+
+.project-copy p {
+  color:#a3afbd;
+  line-height:1.65;
+  margin-bottom:1.25rem;
+}
+
+.project-tags,.tool-cloud {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.42rem;
+}
+
+.project-tags span,.tool-cloud span {
+  padding:.46rem .68rem;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:.67rem;
+  color:#b5c0cb;
+  background:rgba(255,255,255,.025);
+}
+
+.skills-section {
+  background:linear-gradient(180deg,rgba(11,21,35,.55),rgba(5,9,18,0));
+}
+
+.skills-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:.7rem;
+}
+
+.skill-card {
+  min-height:145px;
+  padding:1.1rem;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:rgba(21,32,49,.42);
+  backdrop-filter:blur(20px);
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:1rem;
+  align-items:start;
+  transition:.22s;
+}
+
+.skill-card:hover {
+  transform:translateY(-2px);
+  background:rgba(28,41,61,.58);
+}
+
+.skill-icon,.expertise-icon {
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  border:1px solid var(--line2);
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.04);
+  color:var(--yellow);
+}
+
+.skill-card>div:nth-child(2)>span,.expertise-copy>span {
+  font:500 .62rem var(--mono);
+  color:#788697;
+}
+
+.skill-card h3 {
+  font-size:1.05rem;
+  font-weight:550;
+  margin:.35rem 0 .42rem;
+}
+
+.skill-card p {
+  font-size:.68rem;
+  color:#8c99a9;
+  margin:0;
+}
+
+.skill-card>svg {
+  color:#788697;
+}
+
+.project-cta {
+  margin:1rem 5vw 7rem;
+  padding:2.1rem;
+  border-radius:24px;
+  display:flex;
+  justify-content:space-between;
+  gap:2rem;
+  align-items:end;
+}
+
+.project-cta h2 {
+  font-size:clamp(1.9rem,3vw,3rem);
+  font-weight:550;
+  margin:.8rem 0 .55rem;
+}
+
+.project-cta p {
+  color:var(--muted);
+  margin:0;
+  max-width:650px;
+}
+
+/* Les images sont de vrais <img> : pas de résolution de chemin par css-loader. */
+.media-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 8, 16, 0.03), rgba(4, 8, 16, 0.44));
+  pointer-events: none;
+}
+
+/* Couche animée réservée aux vraies images. */
+.motion-media-layer {
+  position:absolute;
+  inset:-3%;
+  will-change:transform;
+}
+
+.hero-image .motion-media-layer {
+  inset:-2.5%;
+}
+
+.project-feature .project-glass,
+.gallery-project .gallery-glass,
+.project-detail-visual .detail-glass,
+.media-caption,
+.media-chip {
+  transition:transform .3s cubic-bezier(.22,1,.36,1), background .3s ease, border-color .3s ease;
+}
+
+.project-feature:hover .project-glass,
+.gallery-project:hover .gallery-glass {
+  transform:translateY(-3px);
+  background:rgba(7,13,23,.62);
+  border-color:rgba(255,255,255,.18);
+}
+
+.project-feature .project-glass svg,
+.gallery-project .gallery-glass svg,
+.skill-card>svg {
+  transition:transform .3s cubic-bezier(.22,1,.36,1), color .3s ease;
+}
+
+.project-feature:hover .project-glass svg,
+.gallery-project:hover .gallery-glass svg,
+.skill-card:hover>svg {
+  transform:translateX(5px);
+  color:var(--yellow);
+}
+
+/* Un détail de mouvement différent pour chaque projet, sans changer la grammaire générale. */
+.project-feature--aracore:hover .motion-media-layer,
+.gallery-project--aracore:hover .motion-media-layer {
+  filter:saturate(1.04) brightness(1.02);
+}
+
+.project-feature--aracnet:hover .project-topline,
+.gallery-project--aracnet:hover .gallery-index {
+  transform:translateX(4px);
+}
+
+.project-feature--craph:hover .media-overlay,
+.gallery-project--craph:hover .media-overlay {
+  opacity:.76;
+}
+
+.project-topline,
+.gallery-index,
+.media-overlay {
+  transition:transform .3s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+}
+
+.skill-card .skill-icon {
+  transition:transform .3s cubic-bezier(.22,1,.36,1), background .3s ease, border-color .3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform:translateY(-3px) rotate(-2deg);
+  background:rgba(255,224,0,.07);
+  border-color:rgba(255,224,0,.25);
+}
+
+.skills-grid > div,
+.project-stack > div {
+  min-width:0;
+}
+
+.skills-grid > div .skill-card {
+  height:100%;
+}
+

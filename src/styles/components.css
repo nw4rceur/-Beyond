@@ -1,0 +1,208 @@
+/* Petits éléments réutilisés sur plusieurs pages : boutons, verre, labels, etc. */
+
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:.58rem;
+  margin:0;
+  font:500 .68rem var(--mono);
+  letter-spacing:.055em;
+  color:#9eabba;
+  text-transform:uppercase;
+}
+
+.eyebrow>span {
+  width:22px;
+  height:1px;
+  background:var(--yellow);
+}
+
+.primary-action,.glass-action {
+  display:inline-flex;
+  align-items:center;
+  gap:.62rem;
+  padding:.88rem 1.05rem;
+  border-radius:14px;
+  font-size:.8rem;
+  font-weight:600;
+}
+
+.primary-action {
+  background:var(--yellow);
+  color:#0a0d12;
+}
+
+.glass-action {
+  border:1px solid var(--line2);
+  background:rgba(255,255,255,.045);
+  backdrop-filter:blur(18px);
+  color:#dce2e9;
+}
+
+.glass-action:hover {
+  background:rgba(255,255,255,.08);
+}
+
+.glass-media,.glass-card,.glass-wide,.contact-glass,.glass-story {
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(25,38,60,.62),rgba(8,14,24,.46));
+  box-shadow:inset 0 1px rgba(255,255,255,.07),var(--shadow);
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
+}
+
+.status-dot {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--yellow);
+  box-shadow:0 0 14px rgba(255,224,0,.6);
+}
+
+.glass-story {
+  border-radius:22px;
+  padding:1.4rem;
+  min-height:280px;
+  display:flex;
+  flex-direction:column;
+}
+
+.glass-story>svg {
+  color:var(--yellow);
+  margin-bottom:auto;
+}
+
+.glass-story>span {
+  font:.62rem var(--mono);
+  color:#748193;
+  margin-bottom:.8rem;
+}
+
+.glass-story h2 {
+  font-size:1.45rem;
+  font-weight:550;
+  margin-bottom:.6rem;
+}
+
+.glass-story p {
+  color:var(--muted);
+  line-height:1.65;
+  margin:0;
+}
+
+.founder .glass-action {
+  margin-top:.5rem;
+}
+
+.contact-glass {
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.contact-glass a {
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  gap:1rem;
+  align-items:center;
+  padding:1.15rem;
+  border-bottom:1px solid var(--line);
+  transition:.22s;
+}
+
+.contact-glass a:last-child {
+  border-bottom:0;
+}
+
+.contact-glass a:hover {
+  background:rgba(255,255,255,.055);
+}
+
+.contact-glass>a>svg:first-child {
+  color:var(--yellow);
+}
+
+.contact-glass small {
+  display:block;
+  color:#7f8b99;
+  font-size:.66rem;
+  margin-bottom:.2rem;
+}
+
+.contact-glass strong {
+  font-size:.9rem;
+  font-weight:500;
+}
+
+/* Fil d’Ariane discret : utile pour la navigation sans prendre la place du projet. */
+.breadcrumbs {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem;
+  margin-bottom:1.2rem;
+  color:#778596;
+  font:500 .64rem var(--mono);
+}
+
+.breadcrumbs a {
+  color:#aab5c2;
+}
+
+.breadcrumbs a:hover {
+  color:var(--yellow);
+}
+
+/* Réponse tactile commune aux boutons. */
+.primary-action,
+.glass-action,
+.project-pill {
+  position:relative;
+  overflow:hidden;
+  transition:transform .24s cubic-bezier(.22,1,.36,1), background .24s ease, border-color .24s ease, color .24s ease;
+}
+
+.primary-action::before {
+  content:"";
+  position:absolute;
+  top:-70%;
+  left:-35%;
+  width:28%;
+  height:240%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.52),transparent);
+  transform:rotate(18deg) translateX(-180%);
+  transition:transform .62s cubic-bezier(.22,1,.36,1);
+  pointer-events:none;
+}
+
+.primary-action:hover {
+  transform:translateY(-2px);
+}
+
+.primary-action:hover::before {
+  transform:rotate(18deg) translateX(520%);
+}
+
+.primary-action svg,
+.glass-action svg {
+  transition:transform .24s cubic-bezier(.22,1,.36,1);
+}
+
+.primary-action:hover svg,
+.glass-action:hover svg {
+  transform:translateX(4px);
+}
+
+.glass-action:hover {
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.24);
+}
+
+/* Le verre réagit à la lumière sans se transformer en effet 3D. */
+.interactive-glass {
+  transition:transform .34s cubic-bezier(.22,1,.36,1), border-color .34s ease, box-shadow .34s ease, background .34s ease;
+}
+
+.interactive-glass:hover {
+  border-color:rgba(255,255,255,.18);
+  box-shadow:inset 0 1px rgba(255,255,255,.1),0 32px 90px rgba(0,0,0,.38);
+}
+

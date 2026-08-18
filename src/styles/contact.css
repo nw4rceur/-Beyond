@@ -1,0 +1,22 @@
+/* Page de contact. */
+
+.contact-page {
+  padding:9rem 10vw 8rem;
+  min-height:78vh;
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:7vw;
+  align-items:center;
+}
+
+.contact-page h1 {
+  font-size:clamp(3rem,5vw,5.6rem);
+  font-weight:550;
+  line-height:1;
+  margin:1.25rem 0 1.3rem;
+}
+
+.contact-page>div:first-child>p:last-child {
+  color:var(--muted);
+  line-height:1.75;
+}
