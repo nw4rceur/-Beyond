@@ -10,13 +10,13 @@ export default function Expertise() {
       <Seo
         title="Compétences"
         path="/expertise"
-        description="Compétences de Huriel Nguimbi via Beyond31 : React, Flutter, Supabase, UX, SEO technique, sécurité web et électronique de niveau BUT GEII."
+        description="Compétences de Huriel Nguimbi : React, JavaScript, Flutter, Supabase, UI/UX, SEO technique et firmware en langage C."
       />
 
-      <Reveal className="page-hero">
-        <p className="eyebrow"><span />Compétences</p>
-        <h1>Ce que je pratique,<br /><em>et jusqu’où.</em></h1>
-        <p>Les niveaux sont volontairement visibles. Tout mettre au même rang serait moins utile que dire clairement ce que j’utilise déjà et ce que j’approfondis.</p>
+      <Reveal className="page-hero page-hero--compact page-shell">
+        <p className="eyebrow"><span />Compétences clés</p>
+        <h1>Ce que j’utilise<br />aujourd’hui.</h1>
+        <p>Des outils présents dans mes projets, avec une ouverture progressive vers le firmware en langage C.</p>
       </Reveal>
 
       <section className="expertise-list">
@@ -31,13 +31,11 @@ export default function Expertise() {
               <Reveal as="article" className="expertise-row" key={capability.n} delay={index * 0.035}>
                 <div className="expertise-icon"><Icon name={capability.icon} /></div>
                 <div className="expertise-copy">
-                  <span>{capability.level}</span>
+                  <span>{capability.n}</span>
                   <h2>{capability.title}</h2>
                   <p>{capability.desc}</p>
                 </div>
-                <div className="tool-cloud">
-                  {capability.tools.map((tool) => <span key={tool}>{tool}</span>)}
-                </div>
+                <div className="tool-cloud">{capability.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
               </Reveal>
             ))}
           </div>
@@ -46,11 +44,8 @@ export default function Expertise() {
 
       <section className="seo-panel">
         <Reveal className="section-head">
-          <div>
-            <p className="eyebrow"><span />SEO & qualité</p>
-            <h2>Le travail continue derrière l’interface.</h2>
-          </div>
-          <p>Le référencement, la performance et la sécurité sont traités pendant le développement, pas ajoutés après coup.</p>
+          <div><p className="eyebrow"><span />SEO & qualité</p><h2>Ce qui ne se voit pas immédiatement.</h2></div>
+          <p>Indexation, performance et sécurité font partie du développement du site.</p>
         </Reveal>
         <div className="seo-grid">
           {seoDetails.map((detail, index) => (

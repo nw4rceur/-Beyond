@@ -1,8 +1,8 @@
 {
   "name": "beyond31-portfolio",
-  "version": "5.3.0",
+  "version": "7.1.0",
   "private": true,
-  "description": "Beyond31 — portfolio / portfolio and project studio by Huriel Nguimbi.",
+  "description": "Beyond31 — projets, parcours et compétences de Huriel Nguimbi.",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -6,6 +6,8 @@
   <url><loc>https://beyond31.online/projets/aracnet</loc><priority>0.8</priority></url>
   <url><loc>https://beyond31.online/projets/craph</loc><priority>0.8</priority></url>
   <url><loc>https://beyond31.online/expertise</loc><priority>0.8</priority></url>
-  <url><loc>https://beyond31.online/studio</loc><priority>0.7</priority></url>
+  <url><loc>https://beyond31.online/a-propos</loc><priority>0.8</priority></url>
   <url><loc>https://beyond31.online/contact</loc><priority>0.7</priority></url>
+  <url><loc>https://beyond31.online/mentions-legales</loc><priority>0.3</priority></url>
+  <url><loc>https://beyond31.online/confidentialite</loc><priority>0.3</priority></url>
 </urlset>

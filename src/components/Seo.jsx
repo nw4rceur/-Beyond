@@ -18,8 +18,8 @@ export default function Seo({
   noIndex = false,
 }) {
   const canonical = `${SITE_URL}${path}`;
-  const fullTitle = title ? `${title} — Beyond31` : 'Beyond31 — Projets de Huriel Nguimbi';
-  const desc = description || 'Beyond31 rassemble les projets numériques de Huriel Nguimbi.';
+  const fullTitle = title ? `${title} — Beyond31` : 'Beyond31';
+  const desc = description || 'Beyond31 rassemble des projets numériques en développement : Aracore, Aracnet et CRAPH.fr.';
   const socialImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
   const schemaList = Array.isArray(schemas) ? schemas : [schemas].filter(Boolean);
 

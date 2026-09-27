@@ -6,8 +6,8 @@ import Seo from '../components/Seo';
 import Icon from '../components/Icon';
 import AnimatedMedia from '../components/AnimatedMedia';
 import Reveal from '../components/Reveal';
-import Signature31 from '../components/Signature31';
-import { projects, capabilities } from '../data/site';
+import ProjectHive from '../components/ProjectHive';
+import { capabilityGroups } from '../data/site';
 
 export default function Home() {
   const reduceMotion = useReducedMotion();
@@ -15,15 +15,16 @@ export default function Home() {
   return (
     <>
       <Seo
-        description="Beyond31 est le portfolio de Huriel Nguimbi : Aracore, aracnet, CRAPH.fr et des compétences en web, mobile, produit, SEO et systèmes embarqués."
+        description="Beyond31 présente Aracore, Aracnet et CRAPH.fr, ainsi que les compétences mobilisées pour les faire évoluer."
         schemas={[
           {
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Huriel Nguimbi',
-            url: 'https://beyond31.online',
-            sameAs: ['https://instagram.com/beyond_31_'],
-            knowsAbout: ['Web development', 'Flutter', 'Technical SEO', 'Product design', 'Embedded systems'],
+            url: 'https://beyond31.online/a-propos',
+            image: 'https://beyond31.online/images/huriel-portrait.jpeg',
+            sameAs: ['https://instagram.com/beyond_31_', 'https://github.com/nw4rceur/-Beyond'],
+            knowsAbout: ['Web development', 'Flutter', 'Technical SEO', 'Product design', 'C firmware'],
           },
           {
             '@context': 'https://schema.org',
@@ -36,131 +37,81 @@ export default function Home() {
         ]}
       />
 
-      <section className="home-hero">
+      <section className="home-hero home-shell">
         <motion.div
           className="hero-copy"
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow"><span />Portfolio</p>
-          <h1>Aller plus loin<br /><em>que le < Signature31 /> .</em></h1>
+          <p className="eyebrow"><span />Beyond31</p>
+          <h1>Le 31 marque la fin du mois, <em>mais pas celle de l’année.</em></h1>
           <p className="hero-lead">
-            Beyond31 rassemble mes projets web, mobile et techniques. Certains sont déjà en ligne,
-            d’autres continuent d’évoluer. Le principe reste le même : ne pas s’arrêter à la première version.
+            Une vitrine pour les projets que je développe et fais évoluer, entre web, produit, mobile et technique.
           </p>
-
           <div className="hero-actions">
-            <Link className="primary-action" to="/projets">
-              Voir mes projets <Icon name="arrow" />
-            </Link>
+            <Link className="primary-action" to="/projets">Mes projets <Icon name="arrow" /></Link>
             <Link className="glass-action" to="/contact">J’ai un projet</Link>
-          </div>
-
-          <div className="hero-facts">
-            <span><Icon name="compass" /> Poitiers</span>
-            <span><Icon name="repeat" /> Projets en évolution</span>
-            <span><Icon name="seo" /> SEO technique</span>
           </div>
         </motion.div>
 
         <motion.div
           className="hero-image glass-media interactive-glass"
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.985, y: 12 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.99 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.05 }}
         >
-          <AnimatedMedia
-            src="/images/beyond31-hero.png"
-            alt="Visuel Beyond31"
-            priority
-            variant="hero"
-          />
+          <AnimatedMedia src="/images/beyond31-hero.png" alt="Univers Beyond31" priority variant="hero" />
           <div className="media-overlay" />
-          <div className="media-chip"><span className="status-dot" /><span>Beyond31 / 2026</span></div>
-          <div className="media-caption">
-            <strong>Une idée ne s’arrête pas quand elle fonctionne.</strong>
-            <span>Elle peut encore être simplifiée, corrigée, poussée plus loin.</span>
-          </div>
+          <div className="media-chip"><span className="status-dot" /><span>Poitiers · France</span></div>
         </motion.div>
       </section>
 
-      <section className="section project-showcase">
-        <Reveal className="section-head">
+      <section className="projects-home home-shell">
+        <Reveal className="compact-section-head">
           <div>
             <p className="eyebrow"><span />Projets</p>
-            <h2>Trois projets. Trois terrains.</h2>
+            <h2>Mes projets</h2>
           </div>
-          <p>Je préfère montrer ce qui existe plutôt que multiplier les promesses.</p>
+          <Link className="text-link" to="/projets">Tout voir <Icon name="arrow" size={14} /></Link>
         </Reveal>
-
-        <div className="project-stack">
-          {projects.map((project, index) => (
-            <Reveal key={project.slug} delay={index * 0.04}>
-              <Link to={`/projets/${project.slug}`} className={`project-feature project-feature--${project.slug}`}>
-                <motion.div
-                  className={`project-media project-media--${project.slug} interactive-glass`}
-                  whileHover={reduceMotion ? undefined : { y: -4 }}
-                  transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <AnimatedMedia src={project.image} alt={project.name} variant={project.slug} />
-                  <div className="media-overlay" />
-                  <div className="project-topline">
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                    <span>{project.kind}</span>
-                  </div>
-                  <div className="project-glass">
-                    <div><small>{project.year}</small><strong>{project.name}</strong></div>
-                    <Icon name="arrow" />
-                  </div>
-                </motion.div>
-
-                <div className="project-copy">
-                  <div>
-                    <h3>{project.name}</h3>
-                    <p>{project.headline}</p>
-                  </div>
-                  <div className="project-tags">
-                    {project.roles.slice(0, 3).map((role) => <span key={role}>{role}</span>)}
-                  </div>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <ProjectHive />
       </section>
 
-      <section className="section skills-section">
-        <Reveal className="section-head">
+      <section className="skills-home home-shell">
+        <Reveal className="compact-section-head">
           <div>
-            <p className="eyebrow"><span />Compétences</p>
-            <h2>Ce que je peux réellement mettre dans un projet.</h2>
+            <p className="eyebrow"><span />Compétences clés</p>
+            <h2>Ce que j’utilise.</h2>
           </div>
-          <p>Du front-end au SEO, avec un pied dans le mobile et un apprentissage hardware lié au BUT GEII.</p>
+          <Link className="text-link" to="/expertise">Voir le détail <Icon name="arrow" size={14} /></Link>
         </Reveal>
 
-        <div className="skills-grid">
-          {capabilities.map((capability, index) => (
-            <Reveal key={capability.n} delay={(index % 2) * 0.06}>
-              <Link className="skill-card interactive-glass" to="/expertise">
-                <div className="skill-icon"><Icon name={capability.icon} /></div>
-                <div>
-                  <span>{capability.level}</span>
-                  <h3>{capability.title}</h3>
-                  <p>{capability.tools.slice(0, 4).join(' · ')}</p>
-                </div>
-                <Icon name="arrow" size={15} />
-              </Link>
+        <div className="skill-board">
+          {capabilityGroups.map((group) => (
+            <Reveal className="skill-cluster glass-card" key={group.id}>
+              <span className="skill-cluster-label">{group.label}</span>
+              <div className="skill-cluster-items">
+                {group.items.map((item) => (
+                  <div className="skill-mini" key={item.n}>
+                    <Icon name={item.icon} size={18} />
+                    <div>
+                      <strong>{item.title}</strong>
+                      <span>{item.tools.slice(0, 4).join(' · ')}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <Reveal className="project-cta glass-wide interactive-glass">
+      <Reveal className="project-cta glass-wide interactive-glass home-shell">
         <div>
-          <p className="eyebrow"><span />Un besoin, une idée</p>
-          <h2>On peut commencer par en parler.</h2>
-          <p>Site, interface, prototype, amélioration d’un projet existant ou simple échange technique.</p>
+          <p className="eyebrow"><span />Contact</p>
+          <h2>Envie de rentrer en contact ?</h2>
+          <p>Une idée, un projet ou simplement quelque chose à discuter autour du web et du produit.</p>
         </div>
         <Link className="primary-action" to="/contact">J’ai un projet <Icon name="arrow" /></Link>
       </Reveal>

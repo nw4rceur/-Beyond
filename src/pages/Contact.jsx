@@ -10,8 +10,8 @@ export default function Contact() {
       <section className="contact-page">
         <Reveal>
           <p className="eyebrow"><span/>J’ai un projet</p>
-          <h1>Parlons de ce que<br/><em>tu veux construire.</em></h1>
-          <p>Une idée déjà cadrée, un site à améliorer, un prototype ou simplement une question : envoie le contexte, même brièvement.</p>
+          <h1>Envie de rentrer<br/><em>en contact ?</em></h1>
+          <p>Une idée, un projet ou simplement quelque chose à discuter autour du web et du produit : vous pouvez me contacter directement.</p>
         </Reveal>
         <Reveal className="contact-glass interactive-glass" delay={0.08}>
           <a href="mailto:contact@beyond31.online"><Icon name="mail"/><span><small>Email</small><strong>contact@beyond31.online</strong></span><Icon name="arrow"/></a>

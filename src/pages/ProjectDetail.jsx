@@ -25,7 +25,7 @@ export default function ProjectDetail() {
     description: project.intro,
     url: `${SITE_URL}${projectPath}`,
     image: `${SITE_URL}${project.image}`,
-    creator: { '@type': 'Person', name: 'Huriel Nguimbi', url: SITE_URL },
+    creator: { '@type': 'Person', name: 'Huriel Nguimbi', url: `${SITE_URL}/a-propos` },
   };
 
   const breadcrumbSchema = {
@@ -48,9 +48,9 @@ export default function ProjectDetail() {
           <p className="eyebrow"><span />{project.kind} · {project.year}</p>
           <h1>{project.name}</h1>
           <p>{project.headline}</p>
-          <div className="hero-actions">
-            <a className="primary-action" href={project.url} target="_blank" rel="noopener noreferrer">Voir le projet <Icon name="external" /></a>
-            <Link className="glass-action" to="/contact">J’ai un projet</Link>
+          <div className="project-facts">
+            <div><small>État</small><strong>{project.status}</strong></div>
+            <div><small>Rôle</small><strong>{project.roles.join(' · ')}</strong></div>
           </div>
         </Reveal>
 
@@ -61,19 +61,60 @@ export default function ProjectDetail() {
         </Reveal>
       </section>
 
-      <section className="project-detail-body">
-        <Reveal as="aside" className="glass-card interactive-glass">
-          <div><p>État</p><span>{project.status}</span></div>
-          <div><p>Rôle</p>{project.roles.map((role) => <span key={role}>{role}</span>)}</div>
-          <div><p>Technologies</p>{project.stack.map((tool) => <span key={tool}>{tool}</span>)}</div>
-        </Reveal>
+      <section className="case-study">
+        <aside className="case-nav">
+          <span>Étude de cas</span>
+          <a href="#point-depart">01 Point de départ</a>
+          <a href="#cahier">02 Cahier des charges</a>
+          <a href="#approche">03 Approche</a>
+          <a href="#tech">04 Technologies</a>
+          <a href="#apports">05 Ce que ça m’a apporté</a>
+        </aside>
 
-        <article>
-          <Reveal><small>01 — Point de départ</small><h2>{project.challenge}</h2></Reveal>
-          <Reveal delay={0.03}><small>02 — Approche</small><p>{project.approach}</p></Reveal>
-          <Reveal delay={0.03}><small>03 — Construction</small><p>{project.build}</p></Reveal>
-          <Reveal delay={0.03}><small>04 — Contraintes utiles</small><ul className="case-constraints">{project.constraints.map((constraint) => <li key={constraint}>{constraint}</li>)}</ul></Reveal>
-          <Reveal delay={0.03}><small>05 — Ce que le projet m’apprend</small><p>{project.learnings}</p></Reveal>
+        <article className="case-content">
+          <Reveal as="section" id="point-depart" className="case-section case-section--lead">
+            <small>01 — Point de départ</small>
+            <h2>{project.challenge}</h2>
+            <p>{project.intro}</p>
+          </Reveal>
+
+          <Reveal as="section" id="cahier" className="case-section">
+            <small>02 — Cahier des charges</small>
+            <h2>Ce que la première version devait vraiment résoudre.</h2>
+            <div className="brief-grid">
+              {project.brief.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></div>)}
+            </div>
+          </Reveal>
+
+          <Reveal as="section" id="approche" className="case-section">
+            <small>03 — Approche</small>
+            <h2>{project.approach}</h2>
+            <p>{project.build}</p>
+          </Reveal>
+
+          <Reveal as="section" id="tech" className="case-section">
+            <small>04 — Technologies utilisées</small>
+            <div className="stack-display">
+              {project.stack.map((tool) => <span key={tool}>{tool}</span>)}
+            </div>
+          </Reveal>
+
+          <Reveal as="section" id="apports" className="case-section case-section--learning">
+            <small>05 — Ce que ce projet m’a apporté</small>
+            <blockquote>{project.learnings}</blockquote>
+          </Reveal>
+
+          <Reveal as="section" className="case-section project-follow">
+            <small>Suivre le projet</small>
+            <div className="project-follow-links">
+              {project.links.map((link) => (
+                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="glass-action">
+                  <Icon name={link.icon} size={15} /> {link.label}
+                </a>
+              ))}
+              <Link className="glass-action" to="/contact"><Icon name="mail" size={15} /> En parler</Link>
+            </div>
+          </Reveal>
         </article>
       </section>
 
