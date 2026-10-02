@@ -3,11 +3,6 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://beyond31.online';
 
-/**
- * Métadonnées communes à toutes les pages.
- * Le composant accepte plusieurs objets Schema.org pour éviter de mélanger
- * les données du site, de la personne et des projets.
- */
 export default function Seo({
   title,
   description,

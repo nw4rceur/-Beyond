@@ -1,48 +1,43 @@
-# Beyond31 v6
+# Beyond31
 
-Portfolio et vitrine de projets de Huriel Nguimbi.
+Site de Beyond31.
 
-## Lancer le projet
+Le projet est construit avec React et déployé sur Netlify. Il regroupe les pages projets, la présentation des compétences, la page « Qui suis-je » et les informations de contact.
+
+## Lancer le site en local
 
 ```bash
 npm install
 npm start
 ```
 
-Build de production :
+Le build de production se fait avec :
 
 ```bash
 npm run build
 ```
 
-## Organisation
+## Structure
 
-- `src/pages/` : pages React.
-- `src/components/` : composants communs.
-- `src/data/site.js` : projets, compétences et liens. C'est le premier fichier à modifier pour faire évoluer le contenu.
-- `src/styles/` : CSS séparé par zone/page.
-- `public/images/` : visuels des projets, portrait et photos.
-
-## Ajouter un réseau social à un projet
-
-Dans `src/data/site.js`, ajouter une entrée dans `links` :
-
-```js
-{ label: 'Instagram', href: 'https://instagram.com/...', icon: 'instagram' }
+```text
+public/           fichiers servis tels quels, images et métadonnées
+src/components/  composants réutilisés sur plusieurs pages
+src/data/        contenu des projets et compétences
+src/pages/       pages du site
+src/styles/      styles séparés par zone
 ```
 
-Le bouton sera automatiquement affiché dans la fiche du projet.
+## Déploiement
 
-## Images personnelles
+Netlify utilise :
 
-Les photos utilisées dans la page À propos proviennent directement des fichiers fournis par Huriel. Aucune retouche artificielle du visage n'est appliquée ; le cadrage est géré en CSS.
-
-## V7 — contenu personnel
-La présentation personnelle n'est pas rédigée automatiquement.
-Pour l'ajouter, ouvre `src/pages/About.jsx` et complète :
-
-```js
-const personalDescription = 'Ton texte ici';
+```text
+Build command: npm run build
+Publish directory: build
 ```
 
-Les photos personnelles utilisées par la page « Qui suis-je » sont dans `public/images/about/`.
+`node_modules/` et `build/` restent en local et ne sont pas versionnés.
+
+## Domaine
+
+https://beyond31.online

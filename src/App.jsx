@@ -16,7 +16,6 @@ function AnimatedRoutes() {
   const location = useLocation();
   const reduceMotion = useReducedMotion();
 
-  // On repart en haut à chaque changement de page.
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [location.pathname]);

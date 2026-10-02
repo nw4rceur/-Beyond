@@ -1,6 +1,3 @@
-// Les contenus principaux du site vivent ici.
-// L'objectif est de pouvoir faire évoluer un projet sans toucher à sa mise en page.
-
 export const projects = [
   {
     slug: 'aracore',
@@ -9,7 +6,7 @@ export const projects = [
     status: 'En développement',
     kind: 'Produit / application',
     headline: 'Savoir si une machine est disponible avant de descendre à la laverie.',
-    preview: 'Aracore est parti d’une situation banale en résidence : descendre à la laverie et découvrir que toutes les machines sont prises. Le projet transforme ce petit irritant en un service mobile, communautaire et rapide à consulter.',
+    preview: 'Aracore est né d’un problème que je rencontrais en résidence : descendre à la laverie pour découvrir que toutes les machines sont prises. L’idée est simplement de savoir où en sont les machines avant de se déplacer, puis d’ajouter les fonctions utiles autour de cet usage.',
     intro: 'Aracore part d’un problème simple en résidence étudiante : descendre jusqu’à la laverie pour découvrir que toutes les machines sont occupées.',
     url: 'https://aracore.fr',
     image: '/images/aracore-cover.png',
@@ -24,9 +21,9 @@ export const projects = [
       'Permettre la consultation sans compte',
       'Rester simple à utiliser sur mobile et en PWA',
     ],
-    approach: 'La première version repose sur une logique communautaire : les informations utiles viennent des usages et des signalements. L’enjeu est donc de rendre l’état des machines lisible en quelques secondes, tout en gardant des règles suffisamment claires pour éviter les incohérences.',
-    build: 'Le produit combine une interface Flutter, une base Supabase/PostgreSQL, des services Firebase et une version PWA. La logique couvre les états des machines, les cycles, les notifications, l’authentification et les règles d’accès.',
-    learnings: 'Aracore est le premier projet sur lequel j’ai dû penser au-delà de l’interface : transformer un besoin quotidien en fonctionnalités, gérer des états en temps réel, arbitrer entre simplicité et fiabilité, puis faire évoluer un prototype vers un service réellement utilisable.',
+    approach: 'La première version repose sur les signalements des résidents. Je travaille donc surtout sur deux choses : rendre l’état d’une machine compréhensible en quelques secondes et éviter que les réservations ou les statuts deviennent vite incohérents.',
+    build: 'L’application est développée avec Flutter. Supabase/PostgreSQL gère les données et une partie des règles d’accès, tandis que Firebase intervient pour certains services comme les notifications. Une version PWA permet aussi d’utiliser Aracore depuis le web.',
+    learnings: 'Aracore est le premier projet qui m’a obligé à sortir du simple écran : définir des règles, gérer des états qui changent, penser aux erreurs possibles et revoir plusieurs fois des choix qui semblaient évidents au départ.',
     links: [
       { label: 'Voir Aracore', href: 'https://aracore.fr', icon: 'external' },
     ],
@@ -38,7 +35,7 @@ export const projects = [
     status: 'En évolution',
     kind: 'Média numérique',
     headline: 'Construire un média avec une identité éditoriale et une lecture claire.',
-    preview: 'Aracnet est un média en construction autour de l’Afrique et de la diaspora. Au-delà du code, le projet me pousse à travailler la hiérarchie de l’information, le rythme éditorial et une identité qui ne ressemble pas à un simple agrégateur d’articles.',
+    preview: 'Aracnet est un média en construction autour de l’Afrique et de la diaspora. Le projet me sert autant à travailler le web qu’à réfléchir à la façon dont une information est mise en avant, rangée et lue.',
     intro: 'Aracnet travaille à la fois le contenu, la hiérarchie de l’information, l’identité d’un média et sa présence sur le web.',
     url: 'https://aracnet.fr',
     image: '/images/aracnet-cover.png',
@@ -52,9 +49,9 @@ export const projects = [
       'Préparer le site pour une publication régulière',
       'Travailler le référencement dès la structure des pages',
     ],
-    approach: 'Le travail commence par le contenu : quelles informations doivent ressortir, dans quel ordre et avec quel rythme. L’interface vient ensuite soutenir cette hiérarchie plutôt que la remplacer.',
-    build: 'Aracnet me sert aussi de terrain front-end : composants réutilisables, responsive, performances, métadonnées et structure HTML évoluent en parallèle de la ligne éditoriale.',
-    learnings: 'Aracnet m’a surtout appris à réfléchir au contenu avant de réfléchir à l’interface, et à mieux relier identité graphique, navigation, éditorial et SEO.',
+    approach: 'Je pars d’abord des contenus et de leur importance. L’interface vient ensuite : elle doit aider à repérer les sujets, à lire sans se perdre et à donner une identité reconnaissable au média.',
+    build: 'Côté technique, Aracnet me permet de travailler les composants, le responsive, les performances, les métadonnées et la structure HTML en même temps que la partie éditoriale.',
+    learnings: 'Aracnet m’a surtout appris à ne pas commencer par le design. Le contenu, la navigation et la façon dont les sujets sont classés changent directement la manière dont l’interface doit être construite.',
     links: [
       { label: 'Voir Aracnet', href: 'https://aracnet.fr', icon: 'external' },
     ],
@@ -66,7 +63,7 @@ export const projects = [
     status: 'En ligne',
     kind: 'Site institutionnel',
     headline: 'Clarifier les services d’une structure de réadaptation et améliorer sa présence en ligne.',
-    preview: 'CRAPH.fr répond à un besoin plus institutionnel : rendre les services de la structure plus simples à comprendre, organiser des informations parfois techniques et construire une présence web plus cohérente et plus facile à trouver.',
+    preview: 'Avec CRAPH.fr, le besoin était différent : présenter les services de la structure sans perdre les visiteurs dans un vocabulaire trop technique, remettre de l’ordre dans les informations et améliorer la présence du site dans les recherches.',
     intro: 'Refonte et développement du site du Centre de Rééducation et d’Appareillage Prothétique et Orthétique de Libreville.',
     url: 'https://craph.fr',
     image: '/images/craph-cover.png',
@@ -80,9 +77,9 @@ export const projects = [
       'Mettre à jour le vocabulaire et les contenus',
       'Améliorer les bases du référencement naturel',
     ],
-    approach: 'La structure met l’accent sur les services, les informations pratiques et les moyens de contact. Le design reste volontairement sobre pour laisser la priorité au contenu.',
-    build: 'Le travail porte sur l’architecture de contenu, la cohérence graphique, le responsive, l’intégration et les fondamentaux SEO, avec suivi dans Search Console.',
-    learnings: 'CRAPH m’a confronté à un contexte différent de mes projets personnels : travailler à partir de besoins existants, intégrer des retours, hiérarchiser des informations professionnelles et maintenir un site après sa mise en ligne.',
+    approach: 'J’ai organisé les pages autour des services, des informations pratiques et des moyens de contact. Le design reste volontairement sobre : sur ce type de site, le contenu doit passer avant l’effet visuel.',
+    build: 'Le travail comprend l’organisation du contenu, l’intégration responsive, les ajustements graphiques et les bases SEO. Search Console me sert ensuite à vérifier ce que Google voit réellement du site.',
+    learnings: 'CRAPH.fr m’a appris à travailler avec des demandes qui ne viennent pas de moi, à intégrer des retours parfois très concrets et à continuer d’intervenir sur un site après sa mise en ligne.',
     links: [
       { label: 'Voir CRAPH.fr', href: 'https://craph.fr', icon: 'external' },
     ],
@@ -103,7 +100,7 @@ export const capabilityGroups = [
   {
     id: 'design',
     label: 'Concevoir',
-    note: 'Transformer un besoin en parcours, puis en interface lisible.',
+    note: 'Passer d’un besoin à une interface compréhensible.',
     items: [
       { n: '04', icon: 'ux', title: 'UI / UX', desc: 'Parcours, structure de l’information, wireframes et micro-interactions.', tools: ['Parcours', 'Wireframes', 'Architecture', 'Prototypage'] },
       { n: '05', icon: 'brand', title: 'Identité numérique', desc: 'Faire tenir ensemble typographie, couleurs, iconographie et comportement.', tools: ['Direction visuelle', 'Brand UI', 'Design system', 'Iconographie'] },
@@ -112,7 +109,7 @@ export const capabilityGroups = [
   {
     id: 'visibility',
     label: 'Rendre visible',
-    note: 'Le référencement est traité pendant le développement, pas à la fin.',
+    note: 'Je pense au référencement pendant la construction du site, pas une fois qu’il est terminé.',
     items: [
       { n: '06', icon: 'seo', title: 'SEO technique', desc: 'Structure HTML, indexation, métadonnées et performance.', tools: ['Schema.org', 'Canonical', 'Sitemap', 'Search Console', 'Core Web Vitals'] },
       { n: '07', icon: 'shield', title: 'Qualité web', desc: 'Quelques réflexes de sécurité et de maintenance intégrés au projet.', tools: ['CSP', 'Headers HTTP', 'RLS', 'Validation', 'Git'] },
@@ -121,9 +118,9 @@ export const capabilityGroups = [
   {
     id: 'explore',
     label: 'Explorer',
-    note: 'Une ouverture progressive vers le logiciel embarqué.',
+    note: 'Une partie que je commence à travailler avec ma formation.',
     items: [
-      { n: '08', icon: 'firmware', title: 'Firmware — langage C', desc: 'Programmation embarquée en C, logique de contrôle et premières applications sur microcontrôleurs.', tools: ['C', 'Microcontrôleurs', 'Entrées / sorties', 'Logique de contrôle'] },
+      { n: '08', icon: 'firmware', title: 'Firmware — langage C', desc: 'Bases en C pour le firmware, logique de contrôle et premiers programmes sur microcontrôleurs.', tools: ['C', 'Microcontrôleurs', 'Entrées / sorties', 'Logique de contrôle'] },
     ],
   },
 ];

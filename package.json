@@ -1,8 +1,8 @@
 {
-  "name": "beyond31-portfolio",
-  "version": "7.1.0",
+  "name": "beyond31",
+  "version": "7.5.0",
   "private": true,
-  "description": "Beyond31 — projets, parcours et compétences de Huriel Nguimbi.",
+  "description": "Site Beyond31.",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -20,5 +20,17 @@
   },
   "engines": {
     "node": ">=18 <23"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

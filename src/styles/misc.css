@@ -1,5 +1,3 @@
-/* Pages très simples qui ne justifient pas leur propre gros fichier. */
-
 .not-found {
   min-height:calc(100vh - 88px);
   padding:10rem 8vw 8rem;

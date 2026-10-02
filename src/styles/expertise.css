@@ -1,5 +1,3 @@
-/* Compétences : lecture rapide, contenu centré et catégories bien distinctes. */
-
 .expertise-list,
 .seo-panel {
   width:min(calc(100% - 2.5rem),var(--content));

@@ -1,10 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-/**
- * Petite animation d'entrée réutilisable.
- * Le mouvement reste volontairement court pour ne pas ralentir la lecture.
- */
 export default function Reveal({ children, className = '', delay = 0, amount = 0.18, as = 'div' }) {
   const reduceMotion = useReducedMotion();
   const motionTags = {

@@ -2,10 +2,6 @@ import React, { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import MediaImage from './MediaImage';
 
-/**
- * Donne un peu de vie aux images au scroll sans effet de parallaxe exagéré.
- * Les trois projets ont un mouvement légèrement différent pour éviter la répétition.
- */
 export default function AnimatedMedia({ src, alt, priority = false, variant = 'default' }) {
   const ref = useRef(null);
   const reduceMotion = useReducedMotion();

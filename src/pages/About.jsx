@@ -2,48 +2,63 @@ import React from 'react';
 
 import Seo from '../components/Seo';
 import Icon from '../components/Icon';
-import AnimatedMedia from '../components/AnimatedMedia';
 import Reveal from '../components/Reveal';
 import { personalLinks } from '../data/site';
 
-const timeline = [
-  {
-    year: '2024',
-    title: 'Licence Sciences pour l’ingénieur',
-    place: 'Université de Poitiers',
-    detail: 'Première étape universitaire orientée sciences de l’ingénieur : mathématiques, physique, mécanique et premières notions liées aux systèmes techniques. Cette année m’a surtout donné un socle scientifique avant ma réorientation.'
-  },
-  {
-    year: '2025',
-    title: 'Licence Informatique',
-    place: 'Université de Poitiers',
-    detail: 'Réorientation vers l’informatique avec davantage d’algorithmique, de programmation, de logique et de développement. C’est pendant cette période que le web et les projets personnels prennent une place beaucoup plus importante dans mon travail.'
-  },
-  {
-    year: '2026',
-    title: 'BUT GEII',
-    place: 'IUT de Poitiers',
-    detail: 'Formation plus appliquée qui croise automatisme, informatique industrielle, électricité, énergie et programmation. J’y développe notamment mes bases en langage C et en firmware, tout en gardant le web comme terrain principal de projets personnels.'
-  },
-  {
-    year: '2026 →',
-    title: 'Beyond31',
-    place: 'Projets personnels',
-    detail: 'Aracore, Aracnet, CRAPH.fr et les projets qui suivront sont regroupés ici pour documenter leur construction et leur évolution.'
-  },
-]
+const bio = `Je m'appelle Huriel Nguimbi, j'ai 20 ans et j'étudie à Poitiers. Mon parcours universitaire a commencé en licence Sciences pour l'ingénieur, avec des mathématiques, de la physique, de la mécanique et une première approche des systèmes techniques. Je me suis ensuite réorienté en informatique, où j'ai davantage travaillé l'algorithmique, la programmation et le développement. Aujourd'hui, je poursuis en BUT Génie électrique et informatique industrielle, avec de l'automatisme, de l'informatique industrielle, de l'électricité et du langage C.
 
-const personalDescription = `Je m'appelle Huriel Nguimbi, j'ai 20 ans et j'étudie actuellement en BUT Génie électrique et informatique industrielle à Poitiers. Mon parcours a commencé par les sciences pour l'ingénieur, où j'ai découvert les bases scientifiques et techniques, avant une réorientation vers l'informatique qui m'a permis de renforcer la programmation, l'algorithmique et le développement.
+Le web est resté mon terrain principal. J'y apprends surtout en construisant : Aracore m'oblige à penser produit et usage, Aracnet me fait travailler l'éditorial et l'interface, et CRAPH.fr m'a confronté à un site destiné à une structure réelle. Beyond31 rassemble ces projets et me permet de garder une trace de leur évolution.`;
 
-Aujourd'hui, j'essaie surtout de relier ces différents terrains par des projets concrets. Beyond31 sert de vitrine à ce travail : Aracore, Aracnet, CRAPH.fr et les prochains projets me permettent d'apprendre en construisant, de mieux comprendre le produit, le web, le référencement et progressivement le firmware. En dehors des projets, la boxe occupe aussi une place importante dans mon quotidien ; j'ai notamment terminé 2e lors de la Nuit de la boxe universitaire 2025–2026.`;
+function AboutIntro() {
+  return (
+    <section className="about-intro page-shell">
+      <Reveal className="about-copy">
+        <p className="eyebrow"><span />Qui suis-je</p>
+        <h1>Huriel Nguimbi</h1>
+        <div className="about-facts">
+          <span>20 ans</span>
+          <span>Poitiers</span>
+          <span>Étudiant</span>
+          <span>Créateur de Beyond31</span>
+        </div>
+        <p className="about-personal-description">{bio}</p>
+        <div className="about-links">
+          {personalLinks.map((link) => (
+            <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
+              <Icon name={link.icon} size={16} />
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </Reveal>
 
-const boxingPhotos = [
-  '/images/about/boxe-94.jpg',
-  '/images/about/boxe-65.jpg',
-  '/images/about/boxe-64.jpg',
-  '/images/about/boxe-62.jpg',
-  '/images/about/boxe-41.jpg',
-];
+      <Reveal className="about-portrait" delay={0.05}>
+        <img src="/images/about/huriel-portrait.jpeg" alt="Portrait de Huriel Nguimbi" />
+      </Reveal>
+    </section>
+  );
+}
+
+function BoxingActivity() {
+  return (
+    <section className="activity-section page-shell">
+      <Reveal className="activity-photo">
+        <img src="/images/about/boxe-activity.jpg" alt="Nuit de la boxe universitaire à Poitiers" loading="lazy" />
+      </Reveal>
+
+      <Reveal className="activity-copy" delay={0.05}>
+        <p className="eyebrow"><span />Activité</p>
+        <h2>Nuit de la boxe · 2025–2026</h2>
+        <p>
+          La Nuit de la boxe est un événement universitaire organisé à Poitiers autour de rencontres entre étudiants. J'y ai participé pendant la saison 2025–2026 et j'ai terminé à la deuxième place.
+        </p>
+        <p>
+          La boxe occupe une place à part dans mon quotidien. C'est un cadre très différent des projets numériques : tout est plus direct, il faut répéter, s'adapter et rester lucide quand le rythme monte.
+        </p>
+      </Reveal>
+    </section>
+  );
+}
 
 export default function About() {
   return (
@@ -51,7 +66,7 @@ export default function About() {
       <Seo
         title="Qui suis-je — Huriel Nguimbi"
         path="/a-propos"
-        description="Parcours de Huriel Nguimbi, créateur de Beyond31, et galerie personnelle."
+        description="Parcours de Huriel Nguimbi, créateur de Beyond31."
         image="/images/about/huriel-portrait.jpeg"
         schemas={[{
           '@context': 'https://schema.org',
@@ -61,69 +76,8 @@ export default function About() {
           image: 'https://beyond31.online/images/about/huriel-portrait.jpeg',
         }]}
       />
-
-      <section className="about-intro page-shell">
-        <Reveal className="about-copy">
-          <p className="eyebrow"><span />Qui suis-je</p>
-          <h1>Huriel Nguimbi</h1>
-          <div className="about-facts">
-            <span>20 ans</span><span>Poitiers</span><span>Étudiant</span><span>Beyond31</span>
-          </div>
-
-          {personalDescription && (
-            <p className="about-personal-description">{personalDescription}</p>
-          )}
-
-          <div className="about-links">
-            {personalLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
-                <Icon name={link.icon} size={16} /> {link.label}
-              </a>
-            ))}
-          </div>
-        </Reveal>
-
-        <Reveal className="about-portrait" delay={0.06}>
-          <AnimatedMedia src="/images/about/huriel-portrait.jpeg" alt="Portrait de Huriel Nguimbi" priority variant="portrait" />
-          <span className="about-portrait-caption">Huriel Nguimbi · Poitiers</span>
-        </Reveal>
-      </section>
-
-      <section className="about-path page-shell">
-        <Reveal className="about-path-copy">
-          <p className="eyebrow"><span />Parcours</p>
-          <h2>Quelques repères.</h2>
-        </Reveal>
-
-        <div className="timeline">
-          {timeline.map((item, index) => (
-            <Reveal className="timeline-row" key={`${item.year}-${item.title}`} delay={index * 0.035}>
-              <span>{item.year}</span>
-              <div className="timeline-title">
-                <strong>{item.title}</strong>
-                <small>{item.place}</small>
-              </div>
-              <p>{item.detail}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="boxing-story page-shell">
-        <Reveal className="boxing-copy">
-          <p className="eyebrow"><span />Boxe</p>
-          <h2>Nuit de la boxe · 2025–2026</h2>
-          <p>Événement universitaire organisé autour de rencontres de boxe entre étudiants. J’y ai participé lors de la saison 2025–2026 et terminé à la 2e place. Les images ci-dessous gardent une trace de cette soirée et de ma pratique en dehors des projets numériques.</p>
-        </Reveal>
-
-        <div className="boxing-gallery">
-          {boxingPhotos.map((src, index) => (
-            <Reveal className={`boxing-gallery-item boxing-gallery-item--${index + 1}`} key={src} delay={(index % 3) * 0.04}>
-              <img src={src} alt={`Nuit de la boxe — photo ${index + 1}`} loading="lazy" />
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      <AboutIntro />
+      <BoxingActivity />
     </>
   );
 }
