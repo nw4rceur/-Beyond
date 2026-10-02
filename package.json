@@ -5,7 +5,7 @@
   "description": "Site Beyond31.",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node ./node_modules/react-scripts/bin/react-scripts.js build",
     "test": "react-scripts test --watchAll=false",
     "audit": "npm audit --omit=dev",
     "check": "npm run test && npm run build"
