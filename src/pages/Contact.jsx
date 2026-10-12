@@ -1,7 +1,7 @@
 import React from 'react';
-import Seo from '../components/Seo';
-import Icon from '../components/Icon';
-import Reveal from '../components/Reveal';
+import Seo from '../components/MetadonneesSeo';
+import Icon from '../components/Icone';
+import Reveal from '../components/Apparition';
 
 export default function Contact() {
   return (

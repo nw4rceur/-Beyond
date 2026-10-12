@@ -1,14 +1,14 @@
 {
   "name": "beyond31",
-  "version": "7.5.0",
+  "version": "7.7.1",
   "private": true,
-  "description": "Site Beyond31.",
+  "description": "Site personnel Beyond31 : projets, parcours et compétences.",
   "scripts": {
     "start": "react-scripts start",
-    "build": "node ./node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "react-scripts test --watchAll=false",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
     "audit": "npm audit --omit=dev",
-    "check": "npm run test && npm run build"
+    "check": "npm test && npm run build"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
@@ -19,7 +19,8 @@
     "react-scripts": "5.0.1"
   },
   "engines": {
-    "node": ">=18 <23"
+    "node": ">=18 <23",
+    "npm": ">=9"
   },
   "browserslist": {
     "production": [

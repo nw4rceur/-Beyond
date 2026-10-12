@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="titre description">
+  <title id="titre">Schéma électrique simplifié</title>
+  <desc id="description">Illustration technique d’un circuit avec alimentation, commande et charge.</desc>
+  <defs>
+    <linearGradient id="fond" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17243a"/>
+      <stop offset="1" stop-color="#070d17"/>
+    </linearGradient>
+    <pattern id="grille" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#8190a5" stroke-opacity=".12" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" rx="32" fill="url(#fond)"/>
+  <rect width="1200" height="800" rx="32" fill="url(#grille)"/>
+  <g fill="none" stroke="#e7edf5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M170 220H350M460 220H670M790 220H1010V570H850M730 570H510M390 570H170V220"/>
+    <path d="M350 220l26-24M350 220l26 24" stroke="#ffe000"/>
+    <path d="M460 220l-24-25M460 220l-24 25" stroke="#ffe000"/>
+    <path d="M670 220h35M705 180v80M730 195v50M730 220h60" stroke="#ffe000"/>
+    <circle cx="450" cy="570" r="60" stroke="#ffe000"/>
+    <path d="M425 570h50M450 545v50" stroke="#ffe000"/>
+    <rect x="730" y="520" width="120" height="100" rx="12" stroke="#ffe000"/>
+    <path d="M755 570h70M790 545v50" stroke="#ffe000"/>
+    <circle cx="170" cy="220" r="13" fill="#e7edf5"/>
+    <circle cx="1010" cy="570" r="13" fill="#e7edf5"/>
+  </g>
+  <g fill="#aebbd0" font-family="Arial, sans-serif" font-size="28" letter-spacing="2">
+    <text x="170" y="155">ALIMENTATION</text>
+    <text x="590" y="155">COMMANDE</text>
+    <text x="730" y="690">CHARGE</text>
+    <text x="170" y="690">BUT GEII · TRAVAUX PRATIQUES</text>
+  </g>
+  <circle cx="1035" cy="120" r="7" fill="#ff3038"/>
+  <circle cx="1060" cy="120" r="7" fill="#ffe000"/>
+  <circle cx="1085" cy="120" r="7" fill="#e7edf5"/>
+</svg>
